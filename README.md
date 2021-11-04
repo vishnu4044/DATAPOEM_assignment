@@ -25,7 +25,7 @@ Create a product list API that must return X number of products. It should inclu
 
 4)  the user can buy products on the products page using their wallet amount and a notification will be given to the user on their transition status.
 
-# stacks used to develop web application are:
+# Stacks used to develop web application are:
 
 1) HTML,CSS ,JS -  frontend
 2) Flask (python)- Backend
@@ -35,4 +35,8 @@ Create a product list API that must return X number of products. It should inclu
 
 http://vishnudatapoem.pythonanywhere.com/
 
-# results:
+# Results:
+
+## Login page and singup page:
+
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
