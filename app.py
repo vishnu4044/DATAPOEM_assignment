@@ -56,8 +56,8 @@ def index():
         allposts = session['id']
         data = db.collection(u'profile').document(allposts).get()
         res=data.to_dict()
-        name="Nmae: "+res['name']
-        vallet="Vallet Balance : "+str(res['vallet'])
+        name="Name: "+res['name']
+        vallet="Wallet Balance : "+str(res['vallet'])
     except Exception as e:
         print(e)
         name=""
@@ -179,6 +179,8 @@ def product():
 @app.route("/buy", methods=["GET", "POST"])
 def buy():
     allposts = session['id']
+    named=request.form['name']
+    print(named)
     data = db.collection(u'profile').document(allposts).get()
     res = data.to_dict()
     vallet = res['vallet']
@@ -186,7 +188,7 @@ def buy():
     value= int(kt)
     if value>vallet:
         result="insufficent funds"
-        return render_template("trans.html",name=result,balance=vallet)
+        return render_template("trans.html",name=result,balance=vallet,named=named,price=kt)
     else:
         result1=vallet-value
         db.collection(u'profile').document(allposts).update({
@@ -194,31 +196,14 @@ def buy():
         })
         result="transtion successfull"
         balance=result1
-        return render_template("trans.html",name=result,balance=balance)
+        return render_template("trans.html",name=result,balance=balance,named=named,price=kt)
 @app.route("/location", methods=["GET", "POST"])
 def location():
     try:
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
-        city=request.form['location']
-        city = city + " weather"
-        city = city.replace(" ", "+")
-        url='https://www.google.com/search?q='+city+'&oq='+city+'+&aqs=chrome.0.35i39l2j0l4j46j69i60.6128j1j7&sourceid=chrome&ie=UTF-8'
-        res = requests.get(url,headers=headers)
-        print("Searching...\n")
-        soup = BeautifulSoup(res.text, 'html.parser')
-        location = soup.select('#wob_loc')[0].getText().strip()
-        time = soup.select('#wob_dts')[0].getText().strip()
-        info = soup.select('#wob_dc')[0].getText().strip()
-        weather = soup.select('#wob_tm')[0].getText().strip()
-        print(location)
-        print(time)
-        print(info)
-        print(weather + "°C")
-        return render_template("location.html", location=location, time=time, weather=weather, info=info)
+       city=request.form['location']
+       url = 'https://wttr.in/{}'.format(city)
+       return render_template("location.html", location=url)
     except:
         return render_template("location.html", location="please enter proper location",time="api exceed limit")
-
-
 if __name__ == "__main__":
     app.run(debug=True)
