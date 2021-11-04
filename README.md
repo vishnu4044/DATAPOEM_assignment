@@ -46,3 +46,9 @@ http://vishnudatapoem.pythonanywhere.com/
 
 ## Profile page and features:
 
+### profile page:
+![alt text](https://github.com/vishnu4044/DATAPOEM_assignment/blob/main/images/img4.png?raw=true)
+### weather api:
+![alt text](https://github.com/vishnu4044/DATAPOEM_assignment/blob/main/images/img2.png?raw=true)
+![alt text](https://github.com/vishnu4044/DATAPOEM_assignment/blob/main/images/img3.png?raw=true)
+
