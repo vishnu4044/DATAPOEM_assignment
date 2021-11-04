@@ -72,3 +72,32 @@ http://vishnudatapoem.pythonanywhere.com/
 ### In case of unsuccessfull transtation
 
 ![alt text](https://github.com/vishnu4044/DATAPOEM_assignment/blob/main/images/img9.png?raw=true)
+
+
+# Section-2 
+
+# Problem statement:(third question)
+
+The system should have the following specifications1. It should have the two models as APIs.
+2. Usage with only backend - for simplicity, we should be able to use Postman ( API
+hitting tool ) by sending input values of the ML model as parameters (with model
+number ) in the API call and the results of the model can be displayed on the terminal
+after being predicted by the models
+
+# Solution:
+
+## part -1
+
+Dataset--https://www.kaggle.com/laleeth/salary-predict-dataset
+
+1) in this API we used linear regression(model) method to predict the salary by taking experience,test_score,interview_score as input
+
+Result:
+
+![alt text](https://github.com/vishnu4044/DATAPOEM_assignment/blob/main/images/img12.png?raw=true)
+
+Due to limitation in free hosting server unable to host api in server
+
+![alt text](https://github.com/vishnu4044/DATAPOEM_assignment/blob/main/images/img11.png?raw=true)
+
+
