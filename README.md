@@ -52,3 +52,19 @@ http://vishnudatapoem.pythonanywhere.com/
 ![alt text](https://github.com/vishnu4044/DATAPOEM_assignment/blob/main/images/img5.png?raw=true)
 ![alt text](https://github.com/vishnu4044/DATAPOEM_assignment/blob/main/images/img6.png?raw=true)
 
+
+## product page:
+
+### product display API -
+
+#### - https://vishnudatapoem.pythonanywhere.com/products
+
+![alt text](https://github.com/vishnu4044/DATAPOEM_assignment/blob/main/images/img7.png?raw=true)
+
+### After successfull transtation
+
+![alt text](https://github.com/vishnu4044/DATAPOEM_assignment/blob/main/images/img8.png?raw=true)
+
+
+
+
