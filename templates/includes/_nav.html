@@ -1,0 +1,54 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:260px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <h3 class="w3-wide" style="font-family: Lobster, serif; "><b>Datapoem</b></h3>
+  </div>
+    {% if session["email"] %}
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+      <a href="/"  class="w3-bar-item w3-button"><i class='fas fa-user-circle' style="color:green"></i> PROFILE</a>
+      <a href="/products"  class="w3-bar-item w3-button"> products</a>
+    {% if not session["usr"] %}
+        <a  class="w3-bar-item w3-button"href="/signup">SignUp</a>
+        <a class="w3-bar-item w3-button" href="/login">Login</a>
+        {% endif %}
+  {% if session["usr"] %}
+
+ {% if session["email"] %}
+      <p1 >signed as:</p1>
+    <a class="w3-bar-item w3-button">{{session["email"]}}</a>
+        {% endif %}
+      <a class="w3-bar-item w3-button" href="/logout"> Logout</a>
+
+        {% endif %}
+       {% endif %}
+
+  </div>
+</nav>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script>
+// Accordion
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("myBtn").click();
+
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
