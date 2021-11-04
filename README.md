@@ -37,6 +37,8 @@ http://vishnudatapoem.pythonanywhere.com/
 
 # Results:
 
-## Login page and singup page:
+## Login page and singup pages:
 
 ![alt text](https://github.com/vishnu4044/DATAPOEM_assignment/blob/main/images/img1.png?raw=true)
+![alt text](https://github.com/vishnu4044/DATAPOEM_assignment/blob/main/images/img2.png?raw=true)
+![alt text](https://github.com/vishnu4044/DATAPOEM_assignment/blob/main/images/img3.png?raw=true)
