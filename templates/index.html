@@ -3,23 +3,7 @@
 <style>
 
 </style>
-<script>
-            function submit() {
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-
-     document.getElementById("vk").innerHTML = xhttp.responseText;
-    }
-  };
-  xhttp.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=Bangalore&appid=5462b987a5fc004d99cc5b55a2f8c87b", true);
-  xhttp.send();
-
-            }
-
-
-        </script>
-<div class="container" onload="submit()">
+<div class="container" >
   {% if session["email"] %}
     <header class="w3-container w3-xlarge">
     <h1 class="w3-left">Profile Page </h1>
@@ -36,7 +20,7 @@
   <br>
 
  <center><img src="static\assets\datapoem.jpg" width="200px" height="200px"><br><h1>Datapoem</h1><br> <br>
-  <a class="w3-button w3-green" style="width:200px;border-radius: 15px;" href="/login">Login</a>
+  <a class="w3-button w3-green" style="width:200px;border-radius: 15px;" href="/login">Login</a><br><br>
  <a class="w3-button w3-green" style="width:200px;border-radius: 15px;" href="/signup">signup</a></center>
   {% endif %}
 <center>

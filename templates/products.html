@@ -35,8 +35,9 @@ function myFunction() {
               <p>stock: {{stock[i]}}</p>
               <br><br>
               <form method="POST" action="/buy">
-              <input type="text" value={{price[i]}} name="price" hidden>
-                  <input type="submit" class="w3-button w3-green" value="pay">
+              <input type="text" value={{name[i]}} name="name" hidden>
+                  <input type="text" value={{price[i]}} name="price" hidden>
+                  <input type="submit" class="w3-button w3-green" value="Buy">
                   </form>
   </div>
         </div>
