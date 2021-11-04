@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  
+ 
+
+    <form method="POST" action="/addmoney2">
+        {% if message %}
+            <p class="error">{{message}}</p>
+        {% endif %}
+        <h2>Signup</h2>
+         <center><img src="static\assets\datapoem.jpg" width="250px" height="250px">
+        <br><h1>Datapoem</h1> </center>
+<center>
+        <div class="form-group">
+            <label >please enter money to add</label>
+            <input type="text" name="money" class="form-control">
+            <label for="email">Phone number</label>
+            <input type="text" name="email" class="form-control">
+            <label for="password">Pin</label>
+            <input type="text" name="password"class="form-control">
+        </div></center>
+        <center><input class="w3-button w3-green" type="submit" value="Pay"></center>
+    </form>
+
+
+{% endblock %}

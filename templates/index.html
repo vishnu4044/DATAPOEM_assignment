@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+
+</style>
+<script>
+            function submit() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+
+     document.getElementById("vk").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=Bangalore&appid=5462b987a5fc004d99cc5b55a2f8c87b", true);
+  xhttp.send();
+
+            }
+
+
+        </script>
+<div class="container" onload="submit()">
+  {% if session["email"] %}
+    <header class="w3-container w3-xlarge">
+    <h1 class="w3-left">Profile Page </h1>
+    </header>
+  {% endif %}
+  {% if not session["usr"] %}
+  <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br> <br>
+  <br>
+  <br>
+
+ <center><img src="static\assets\datapoem.jpg" width="200px" height="200px"><br><h1>Datapoem</h1><br> <br>
+  <a class="w3-button w3-green" style="width:200px;border-radius: 15px;" href="/login">Login</a>
+ <a class="w3-button w3-green" style="width:200px;border-radius: 15px;" href="/signup">signup</a></center>
+  {% endif %}
+<center>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+<h2 style="font-family: Lobster, serif;">{{name}}</h2>
+  <br>
+  <br>
+  <h2 style="font-family: Lobster, serif;">{{vallet}}</h2>
+    <br>
+    <br>
+    {% if session["email"] %}
+    <center><a href="/addmoney"> <button  class="w3-button w3-blue">Add Money to wallet</button></a></center><br>
+    <center><form method="POST" action="/location">
+      <div class="form-group">
+            <label >location( city )</label><br><br>
+            <input width="25" type="text" name="location"><br><br>
+        <center><input class="w3-button w3-green" type="submit" value="details"></center>
+        </div></form></center>
+    {% endif %}
+{% if availability=="Availability :True" %}
+  <h2>Status:</h2>
+<img src="static\assets\open.png"height="200px" width="200px">
+<br>
+<button class="w3-button w3-red" style="border-radius: 15px;"><a href="{{ url_for('.close') }}">close</a></button>
+  <br>  <br><a class="w3-button w3-purple"href="/history"style="border-radius: 15px;"><i class='fas fa-book'> Order History</i></a>
+{% elif availability=="Availability :False"%}
+<h3>Status</h3>
+<img src="static\assets\closed.jpg" height="200px" width="200px">
+<br>
+<button class="w3-button w3-green" style="border-radius: 15px;"><a href="{{ url_for('.open') }}">open</a></button>
+  <br> <br><a class="w3-button w3-purple"href="/history"style="border-radius: 15px;"><i class='fas fa-book'>  Order History</i></a></center>
+{%else %}
+<h1> </h1>
+{% endif %}
+<br>
+</div>
+{% endblock %}

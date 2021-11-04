@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  
+ 
+
+    <form method="POST" action="/signup">
+        {% if message %}
+            <p class="error">{{message}}</p>
+        {% endif %}
+        <h2>Signup</h2>
+         <center><img src="static\assets\logo.png" width="250px" height="250px">
+        <br><h1>Datapoem</h1> </center>
+<center>
+        <div class="form-group">
+            <label >Name</label>
+            <input type="text" name="name" placeholder="name"class="form-control">
+            <label for="email">Email:</label>
+            <input type="email" name="email" placeholder="Email"class="form-control">
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="Password"class="form-control">
+        </div></center>
+        <input type="submit" value="Sign Up">
+    </form>
+
+
+{% endblock %}
